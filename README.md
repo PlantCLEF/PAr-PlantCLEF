@@ -2,13 +2,13 @@
 
 Participation à [PlantCLEF 2026](https://www.kaggle.com/competitions/plantclef-2026) (identification multi-espèces sur images de parcelles).
 
-## Workflow
+Les notebooks s’exécutent sur **Kaggle** (données sous `/kaggle/input`). Le format de soumission est fixé par [`submission-method.md`](submission-method.md) : seule `predict_species` change.
 
-- **Code** : versionné ici (GitHub), travail à deux.
-- **Exécution** : notebooks sur **Kaggle** (données attachées sous `/kaggle/input`). Pas de run local sur le full dataset.
+| Notebook | Approche |
+|---|---|
+| [`01_eda_basic`](notebooks/01_eda_basic.ipynb) | image entière |
+| [`exclusion-tuile`](notebooks/exclusion-tuile.ipynb) | grille 4×4, tuiles de couleur florale |
+| [`centrage-des-plantes-dans-les-tuiles`](notebooks/centrage-des-plantes-dans-les-tuiles.ipynb) | carrés centrés sur les amas colorés |
+| [`sam3-segmentation-naive`](notebooks/sam3-segmentation-naive.ipynb) | fleurs segmentées par SAM3 |
 
-## Notebooks
-
-- [`notebooks/01_eda_basic.ipynb`](notebooks/01_eda_basic.ipynb) — EDA de base (counts, splits, espèces).
-
-Pour l’exécuter : créer un notebook dans la compétition Kaggle, attacher les datasets, coller / synchroniser le contenu de `01_eda_basic.ipynb`, puis Run All.
+Les CSV générés sont dans `submission/`.
